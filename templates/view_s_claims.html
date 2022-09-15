@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+	<h1 align="center">Claims</h1>
+	<div class="row">
+        <div class="container"><a href="/view_all_claims" class="round"  style="border-radius: 50%;background-color: #050505;
+            color: rgb(255, 255, 255);display: inline-block;
+      padding: 8px 16px;" onMouseOver="this.style.color='#2F7'"
+            onMouseOut="this.style.color='#FFF'">&#8249;</a></div>
+
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Claim_ID</th>
+                      <th scope="col">amount</th>
+                      <th scope="col">date</th>
+                      <th scope="col">description</th>  
+                      <th scope="col">status</th>
+                      <th scope="col">main Customer id</th>
+                      <th scope="col">main customer name</th>  
+                      <th scope="col">dependent name</th>
+                      <th scope="col">hospital name</th>                      
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                        <th scope="row">{{ data[0] }}</th>
+                        <td>{{ data[1] }}</td>
+                        <td>{{ data[2] }}</td>
+                        <td>{{ data[3] }} </td>
+                        <td> {% if data[4] == None %}
+                            <div class="dropdown">
+                              <button class="btn btn-secondary btn-lg mx-3 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Resolve
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="{{ 'accept_claim_{}'.format(data[0]) }}">Accept</a></li>
+                                <li><a class="dropdown-item" href="{{ 'refuse_claim_{}'.format(data[0]) }}">Refuse</a></li>
+                              </ul>
+                              </div>	
+                            {% elif data[4] == 1 %}
+                            Accepted
+                            {% else %}
+                            Refused
+                            {% endif %}</td></td>
+                        <td>{{ data[5] }}</td>
+                        <td>{{ data[6] }} </td>
+                        <td>{{ data[7] }}</td>
+                        <td>{{ data[8] }}</td>
+                      </tr>
+                  </tbody>
+            </table>
+
+
+       
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+
+</script>
+{% endblock %}

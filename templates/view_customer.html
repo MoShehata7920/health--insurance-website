@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+	<h1 align="center">customers</h1>
+	<div class="row">
+       
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">C_ID</th>
+                      <th scope="col">SSN</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Birth Date</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Salary</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Phone Number</th>
+                      <th scope="col">Has Chronic dis</th>
+                      <th scope="col">Tall</th>
+                      <th scope="col">weight</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Plane</th>
+                      
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {% for customer in data %}
+                    <tr>
+                        <th scope="row">{{ customer[0] }}</th>
+                        <td>{{ customer[1] }}</td>
+                        <td>{{ customer[2] }}</td>
+                        <td>{{ customer[3] }} </td>
+                        <td>{{ customer[4] }}</td>
+                        <td>{{ customer[5] }}</td>
+                        <td>{{ customer[6] }}</td>
+                        <td>{{ customer[7] }} </td>
+                        <td>{{ customer[8] }}</td>
+                        <td>{{ customer[9] }}</td>
+                        <td>{{ customer[10] }} </td>
+                        <td>{{ customer[11] }}</td>
+                        <td>{{ customer[12] }} </td>
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+            </table>
+       
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+
+    <script>
+            function click(){
+                var x =document.getElemetByName('dependant').value;
+                if(x == null || x == ""){
+                    document.getElemetByName('dependant').value = 0;
+                }
+             }
+        </script>
+	<h1 align="center"> Add New Claim</h1>
+	<div class="form">
+		<form action="submit_file_claim" method="POST">
+            <label for="amount">amount:</label><br>
+                <input type="number" step="0.5" name="amount"><br>
+            <label for="date">date:</label><br>
+                <input type="date" name="date"><br>
+            <label for="address">description:</label><br>
+                <textarea name="description"></textarea><br>
+            <label for="ssn">ssn:</label><br>
+                <input type="text" name="ssn"><br><br>
+
+            <label for="dependant">dependant:</label><br>
+                <input type="text" name="dependant"><br>
+            <label for="hospital">hospital:</label><br>
+                <select name="hospital">
+                {% for hospital in data %}
+                    <option scope="row" value={{ hospital[0] }}>{{ hospital[1] }}</option>
+                  {% endfor %}
+                     </select><br><br>
+            <input type="submit" value="File A Claim" onclick="click();"><br>
+
+
+        </form>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
+
+

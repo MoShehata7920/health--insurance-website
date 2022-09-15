@@ -1,0 +1,20 @@
+
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+    <div style="font-size: 50px"id = "succesful">
+        done successfully
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script>
+    setTimeout(function(){
+        window.location.href = '{{ redirect }}';
+    }, 3000);
+</script>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+	<h1 align="center"> Welcome to our the Medical Insurance</h1>
+	<div class="depts">
+		<div class="row">
+			
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="row">
+	<div class="col-sm-6">
+	  <div class="card" style="margin: 20px;">
+		<div class="card-body">
+		  <h5 class="card-title">Add New Hospital</h5>
+		  <p class="card-text">You can Add new hospital here with its informations and plnes that hospital covers</p>
+		  <a class="btn btn-secondary btn-lg mx-3" href="/add_hospital">Add New Hospital</a>
+		</div>
+	  </div>
+	</div>
+
+	<div class="col-sm-6">
+	  <div class="card" style="margin: 20px;">
+		<div class="card-body">
+		  <h5 class="card-title">Add New Customer</h5>
+		  <p class="card-text">You can here add new customers with his/her information and his plane</p>
+		  <a class="btn btn-secondary btn-lg mx-3" href="/add_customer">Add New Customer</a>
+		</div>
+	  </div>
+	</div>
+	<div class="col-sm-6">
+		<div class="card"style="margin: 20px;">
+		  <div class="card-body">
+			<h5 class="card-title">Add New Dependent</h5>
+			<p class="card-text">Ypu can add new dependent with new plane for him/here</p>
+			<a class="btn btn-secondary btn-lg mx-3" href="/add_depndant">Add New Dependant</a><br>
+		</div>
+		</div>
+	  </div>
+
+	<div class="col-sm-6">
+		<div class="card"style="margin: 20px;">
+		  <div class="card-body">
+			<h5 class="card-title">Show hospitals on planes</h5>
+			<p class="card-text">You can Know which hospitals avilable on your plane</p>
+			<div class="dropdown">
+				<button class="btn btn-secondary btn-lg mx-3 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				  Your plane
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+				  <li><a class="dropdown-item" href="/show_hospitals_1">Basic</a></li>
+				  <li><a class="dropdown-item" href="/show_hospitals_2">Premium</a></li>
+				  <li><a class="dropdown-item" href="show_hospitals_3">Golden</a></li>
+				</ul>
+			  </div>		 
+			 </div>
+		</div>
+	  </div>
+	 
+	  <div class="col-sm-6">
+		<div class="card"style="margin: 20px;">
+		  <div class="card-body">
+			<h5 class="card-title">Veiw Customers</h5>
+			<p class="card-text">You can see all customers informations here</p>
+			<a class="btn btn-secondary btn-lg mx-3" href="/view_customer">View Customers</a>
+		</div>
+		</div>
+	  </div>
+
+	  <div class="col-sm-6">
+		<div class="card"style="margin: 20px;">
+		  <div class="card-body">
+			<h5 class="card-title">File an insurance claim</h5>
+			<p class="card-text">You can file here an insurance claim</p>
+			<a class="btn btn-secondary btn-lg mx-3" href="/file_claim">File a Claim</a>
+		</div>
+		</div>
+	  </div>
+	  <div class="col-sm-6">
+		<div class="card"style="margin: 20px;">
+		  <div class="card-body">
+			<h5 class="card-title">Veiw payments</h5>
+			<p class="card-text"> You can veiw payments and verify them from here</p>
+			<a class="btn btn-secondary btn-lg mx-3" href="/payments">Payments</a>
+		</div>
+	  </div>
+  </div>
+	  <div class="col-sm-6">
+		<div class="card"style="margin: 20px;">
+		  <div class="card-body">
+			<h5 class="card-title">Veiw Claims</h5>
+			<p class="card-text"> You can veiw filed claims here</p>
+			<div class="dropdown">
+				<button class="btn btn-secondary btn-lg mx-3 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				  show claims
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+				  <li><a class="dropdown-item" href="/view_all_claims">All Claims</a></li>
+				  <li><a class="dropdown-item" href="/view_unresolved_claims">Unresolved Claims</a></li>
+				</ul>
+			  </div>		
+		</div>
+	  </div>
+	 
+</div>
+
+{% endblock %}

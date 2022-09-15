@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+	<h1 align="center">Claims</h1>
+	<div class="row">
+       
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">Payment ID</th>
+                      <th scope="col">amount</th>
+                      <th scope="col">date</th>
+                      <th scope="col">status</th>
+                      <th scope="col">customer ssn</th>
+                      <th scope="col">Name</th>   
+                      <th scope="col">phone</th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {% for snap in data %}
+                    
+                    <tr>
+                        <th scope="row">{{ snap[0] }}</a></th>
+                        <td>{{ snap[1] }}</td>
+                        <td>{{ snap[2] }} </td>
+                        <td>
+                          {% if snap[3] == 0 %}
+                          <div class="dropdown">
+                            <button class="btn btn-secondary btn-lg mx-3 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                              verify payment
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="{{ 'verify_payment_{}'.format(snap[0]) }}">verify</a></li>
+                            </ul>
+                            </div>	
+                          
+                            {% else %}
+                            verified
+
+                          {% endif %}</td>
+                        <td>{{ snap[4] }} </td>
+                        <td>{{ snap[5] }} </td>
+                        <td>{{ snap[6] }} </td>
+                      </tr></a>
+                      {% endfor %}
+                  </tbody>
+            </table>
+       
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

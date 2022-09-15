@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+name, birth_date, gender, income, address, phone, has_chronic_dis, tall, weight, email, plane
+{% block head %}{% endblock %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+	<h1 align="center"> Add New Hospital</h1>
+	<div class="form">
+		<form action="submit_add_new_dependent" method="POST">
+            <label for="ssn">main customer ssn:</label><br>
+            <input type="text" name="ssn"><br>
+
+            <label for="name">dependent name:</label><br>
+            <input type="text" name="name"><br>
+
+            <label for="birth_date">birth_date:</label><br>
+            <input type="date" name="birth_date"><br>
+
+           
+            <label for="plane">Plane:</label><br>
+
+            <input type="radio" name="plane" id="basic" value="1">
+            <label for="basic">Basic</label><br>
+            <input type="radio" name="plane" id="premium" value="2">
+            <label for="premium">Premium</label><br>
+            <input type="radio" name="plane" id="golden" value="3">
+            <label for="golden">Golden</label><br><br>
+            
+            <input type="submit" value="Add Dependent"><br>
+            
+        </form>
+	</div>
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
